@@ -1,6 +1,35 @@
 <div>
     <h1>ברוכים הבאים לאתר הנעליים הכי מגניבה בארץ באנגולר</h1>
 
+<!-- <p>יש לנו כ-{{quantity}} דגמי נעליים שונים בחנות</p> -->
+ <!-- BETTER TO make components -->
+<app-sale></app-sale>
 
+<!-- <p *ngIf="isSunday()">יום ראשון היום יש מבצע של {{discount}}%!</p> -->
+<app-discount></app-discount>
+
+<div>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/bMz1miqo-So" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+    
+
+<app-shoes></app-shoes>
+    <!-- <span class="box" *ngFor="let s of shoes"> | {{s.name}} |</span>
+    <br/> -->
+
+
+    <app-color-box></app-color-box>
+    <!-- <input type="text" [(ngModel)]="message"> -->
+    
+    
+    <!-- <span class='red' [ngClass]="getColorFromText()">{{message}}</span> -->
+    <!-- <span  [ngClass]="message">{{message}}</span> -->
+    <!-- <span  [ngStyle]="message">{{message}}</span> -->
+    <!-- <div>rtrtr</div> -->
+
+
+
+
+
+</div>
+

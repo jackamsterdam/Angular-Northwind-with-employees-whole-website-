@@ -1,0 +1,12 @@
+<div class="box">
+
+    <input type="text" [(ngModel)]="message">
+
+
+    <!-- this is only for the 2 defined classes:  -->
+<!-- <span [ngClass]="message">{{message}}</span> -->
+<!-- but this is for all colors with ngStyel:  -->
+<!-- <span [ngStyle]="{'color': 'pink'}">{{message}}</span> -->
+<span [ngStyle]="{'color': message}">{{message}}</span>
+
+</div> 
