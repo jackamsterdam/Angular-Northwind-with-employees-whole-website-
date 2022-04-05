@@ -1,12 +1,52 @@
-<div class="box">
+<!-- so i wrote several options:  -->
 
-    <input type="text" [(ngModel)]="message">
+<!-- (attribute directive and property binding in same tinme ) -->
+<!-- <div class="box" [ngStyle]="{color:color}"> -->
+<!-- <div class="box" [ngStyle]="{color}"> -->
+    <!-- <div class="box" [ngStyle]="{backgroundColor: color}"> -->
+        <!-- you can type #000000 or #ffffff or any color  -->
+        
+        <!-- either write the object above or take the ojbect from ts and put here  -->
+        <!-- <div class="box" [ngStyle]="{
+            backgroundColor: 'green',
+            color: 'blue',
+            fontSize: 'xx-large'
+        }"> -->
+        
+        <div class="box" [ngStyle]="myStyles">
+
+       
+<!-- btw if you only want one:  -->
+<!-- ***** -->
+     <!-- for one style:  -->
+        <!-- <div class="box" [style.backgroundColor]="color"> -->
+
+            <!-- for one class:  -->
+<!-- <div class="box" [class.yellow]="true"> -->
+            <!-- for the text box:  -->
+<!-- ***** -->
+
+
+
+
+    <!-- <input type="text" [(ngModel)]="message"> -->
+    <input type="text" [(ngModel)]="color">
+
 
 
     <!-- this is only for the 2 defined classes:  -->
 <!-- <span [ngClass]="message">{{message}}</span> -->
 <!-- but this is for all colors with ngStyel:  -->
 <!-- <span [ngStyle]="{'color': 'pink'}">{{message}}</span> -->
-<span [ngStyle]="{'color': message}">{{message}}</span>
+<!-- <span [ngStyle]="{'color': message}">{{message}}</span> -->
+<!-- changes variabel to be called color:  -->
+<!-- <span [ngStyle]="{'color': color}">{{color}}</span> -->
+<span>{{color}}</span>
+
+<!--  asaf:
+<div class="box" [ngStyle]="{color}">
+    <input type="text" [(ngModel)="color"]>
+    <span>{{color}}</span>
+</div> -->
 
 </div> 

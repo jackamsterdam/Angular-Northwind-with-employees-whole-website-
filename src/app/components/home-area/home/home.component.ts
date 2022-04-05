@@ -9,7 +9,8 @@ export class HomeComponent implements OnInit {
   // quantity: number = 350
   // discount: number = 10
   // message: string ='red'
-  message!: string
+  // message!: string
+
   // cant do this: console.log("message", message);
 
 

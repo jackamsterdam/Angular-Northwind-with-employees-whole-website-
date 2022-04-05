@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color-box.component.css']
 })
 export class ColorBoxComponent implements OnInit {
-message!: string
+// message!: string
+color!: string
+
+
+// antoerh option to send styles object: 
+myStyles = {
+  backgroundColor: "green",
+  color: 'blue',
+  fontSize: 'xx-large'
+}
   constructor() { }
 
   ngOnInit(): void {
