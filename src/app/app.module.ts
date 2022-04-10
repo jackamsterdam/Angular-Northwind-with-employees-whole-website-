@@ -11,7 +11,10 @@ import {FormsModule} from '@angular/forms';
 import { DiscountComponent } from './components/home-area/discount/discount.component';
 import { SaleComponent } from './components/home-area/sale/sale.component';
 import { ShoesComponent } from './components/home-area/shoes/shoes.component';
-import { ColorBoxComponent } from './components/home-area/color-box/color-box.component'
+import { ColorBoxComponent } from './components/home-area/color-box/color-box.component';
+import { AnotherSaleComponent } from './components/home-area/another-sale/another-sale.component';
+import { ColorPickerComponent } from './components/home-area/color-picker/color-picker.component';
+import { DisplayImagesComponent } from './components/home-area/display-images/display-images.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { ColorBoxComponent } from './components/home-area/color-box/color-box.co
     SaleComponent,
     ShoesComponent,
     ColorBoxComponent,
+    AnotherSaleComponent,
+    ColorPickerComponent,
+    DisplayImagesComponent,
   ],
   imports: [
     BrowserModule,

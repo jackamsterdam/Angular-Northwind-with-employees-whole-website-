@@ -28,6 +28,15 @@
     <!-- <div>rtrtr</div> -->
 
 
+<app-another-sale item="פומה" [price]="17.00"></app-another-sale>
+
+<app-color-picker (report)="displayColor($event)"></app-color-picker>
+
+<!-- two ways:  -->
+<!-- <span [ngClass]="colorFromChild">Press a button to change my color</span> -->
+<span [ngStyle]="colorFromChild">Press a button to change my color</span>
+
+<app-display-images></app-display-images>
 
 
 

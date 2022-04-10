@@ -37,4 +37,12 @@ export class HomeComponent implements OnInit {
   //     return this.message
   // }
 
+
+  //!this is how i do ngStgyle with object???
+  // colorFromChild: string
+  colorFromChild: {color: string} //so this is an interface.
+  displayColor(result: string):void {
+  // this.colorFromChild = result
+  this.colorFromChild = {color: result}
+  }
 }
