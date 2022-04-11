@@ -1,0 +1,21 @@
+<div class="box">
+    <form (ngSubmit)="add()">
+
+        <h2>הוספת מוצר</h2>
+
+        <label>שם:</label>
+        <input type="text" name="name" [(ngModel)]="product.name">
+        
+        <label>מחיר:</label>
+        <input type="number" step="0.01" name="price" [(ngModel)]="product.price">
+
+        <label>כמות:</label>
+        <input type="number" name="stock" [(ngModel)]="product.stock">
+
+        <label>תמונה:</label>
+        <input type="file" name="image" [(ngModel)]="product.image">
+
+
+        <button>הוסף</button>
+    </form>
+</div>

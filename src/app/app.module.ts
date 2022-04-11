@@ -14,7 +14,15 @@ import { ShoesComponent } from './components/home-area/shoes/shoes.component';
 import { ColorBoxComponent } from './components/home-area/color-box/color-box.component';
 import { AnotherSaleComponent } from './components/home-area/another-sale/another-sale.component';
 import { ColorPickerComponent } from './components/home-area/color-picker/color-picker.component';
-import { DisplayImagesComponent } from './components/home-area/display-images/display-images.component'
+import { DisplayImagesComponent } from './components/home-area/display-images/display-images.component';
+import { PageNotFoundComponent } from './components/layout-area/page-not-found/page-not-found.component';
+import { ProductListComponent } from './components/products-area/product-list/product-list.component';
+import { ProductCardComponent } from './components/products-area/product-card/product-card.component';
+import { ProductDetailsComponent } from './components/products-area/product-details/product-details.component';
+import { AddProductComponent } from './components/products-area/add-product/add-product.component';
+import { AboutComponent } from './components/about-area/about/about.component';
+import { SuccessStoryComponent } from './components/success-stories-area/success-story/success-story.component'
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -30,11 +38,19 @@ import { DisplayImagesComponent } from './components/home-area/display-images/di
     AnotherSaleComponent,
     ColorPickerComponent,
     DisplayImagesComponent,
+    PageNotFoundComponent,
+    ProductListComponent,
+    ProductCardComponent,
+    ProductDetailsComponent,
+    AddProductComponent,
+    AboutComponent,
+    SuccessStoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [LayoutComponent]

@@ -1,0 +1,10 @@
+<div class="box" *ngIf="product">
+    <!-- <h2>Product Details</h2> -->
+    <h3>שם: {{product.name}}</h3>
+    <h3>מחיר: {{product.price}}</h3>
+    <h3>כמות: {{product.stock}}</h3>
+    <img [src]="productImagesUrl + product.imageName">
+    <br>
+  
+    <a routerLink="/products">חזרה לתפריט מוצרים</a>
+</div>

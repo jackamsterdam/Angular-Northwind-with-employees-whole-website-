@@ -5,4 +5,10 @@ div {
 
 div > a {
     margin-top: 20px;
+    text-decoration: none;
+}
+
+.active {
+    color: green;
+    font-weight: bold;
 }

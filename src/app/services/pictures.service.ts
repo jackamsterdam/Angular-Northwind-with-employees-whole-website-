@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PicturesService {
 time: string
-  constructor() { }
+  // constructor() { }
 
   displayPicturesByTimeOfDay():any {
    const now = new Date()

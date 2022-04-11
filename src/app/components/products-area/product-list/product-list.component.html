@@ -1,0 +1,5 @@
+<!-- <span *ngFor="let p of products">{{p.name}}</span> -->
+
+
+<a routerLink="/products/new">➕</a>
+<app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
