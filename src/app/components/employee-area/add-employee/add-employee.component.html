@@ -1,0 +1,42 @@
+<div class="box">
+  <form (ngSubmit)="submit()">
+    <h2>הוספת עובד</h2>
+
+    <label>קידומת לשם:</label>
+    <select name="title"  [(ngModel)]="employee.titleOfCourtesy">
+        <option value="Ms.">Ms.</option>
+        <option value="Dr.">Dr.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Mr.">Mr.</option>
+    </select>
+
+    <label>שם:</label>
+    <input type="text" name="firstName" [(ngModel)]="employee.firstName" />
+
+    <label>שם משפחה:</label>
+    <input type="text" name="lastName" [(ngModel)]="employee.lastName" />
+
+    <label>תפקיד:</label>
+    <input type="text" name="title" [(ngModel)]="employee.title" />
+
+    <label>תאריך לידה:</label>
+    <input type="date" name="birthDate" [(ngModel)]="employee.birthDate" />
+
+    <label>כתובת:</label>
+    <input type="text" name="address" [(ngModel)]="employee.address" />
+
+    <label>עיר:</label>
+    <input type="text" name="city" [(ngModel)]="employee.city" />
+
+    <label>מדינה:</label>
+    <input type="text" name="country" [(ngModel)]="employee.country" />
+
+    <label>מספר טלפון:</label>
+    <input type="tel" name="homePhone" [(ngModel)]="employee.homePhone" />
+
+    <label>תמונה :</label>
+    <input type="file" name="image" [(ngModel)]="employee.image" />
+
+    <button>הוסף</button>
+  </form>
+</div>

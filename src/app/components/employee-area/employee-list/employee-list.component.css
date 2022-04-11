@@ -1,0 +1,22 @@
+a::first-line {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    text-decoration: none;
+}
+
+table {
+    margin: 10px auto;
+    font-size: large;
+    /* width: 250px; */
+
+}
+
+table, tr, th {
+ border: 1px solid black;
+}
+
+
+img {
+    width: 100px;
+}

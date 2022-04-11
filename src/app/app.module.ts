@@ -22,7 +22,11 @@ import { ProductDetailsComponent } from './components/products-area/product-deta
 import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 import { AboutComponent } from './components/about-area/about/about.component';
 import { SuccessStoryComponent } from './components/success-stories-area/success-story/success-story.component'
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { VatCalculatorComponent } from './components/calculateArea/vat-calculator/vat-calculator.component';
+import { EmployeeListComponent } from './components/employee-area/employee-list/employee-list.component';
+import { AddEmployeeComponent } from './components/employee-area/add-employee/add-employee.component';
+import { EmployeeDetailsComponent } from './components/employee-area/employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import {HttpClientModule} from '@angular/common/http'
     AddProductComponent,
     AboutComponent,
     SuccessStoryComponent,
+    VatCalculatorComponent,
+    EmployeeListComponent,
+    AddEmployeeComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

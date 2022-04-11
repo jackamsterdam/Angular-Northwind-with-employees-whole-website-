@@ -1,0 +1,45 @@
+<!-- <span *ngFor="let e of employees">{{e.firstName}}</span> -->
+
+<a routerLink="/employees/new">➕</a>
+
+<table>
+    <thead>
+          <tr>
+              <th>קידומת לשם</th>
+              <th>שם</th>
+              <th>שם משפחה</th>
+              <th>תפקיד</th>
+              <th>תאריך לידה</th>
+              <th>כתובת</th>
+              <th>עיר</th>
+              <th>מדינה</th>
+              <th>מספר טלפון</th>
+              <th>תמונה</th>
+          </tr>
+    </thead>
+    <tbody>
+  
+
+    <tr *ngFor="let e of employees">
+        <td>{{e.titleOfCourtesy}}</td>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td>{{e.title}}</td>
+        <td>{{formatDate(e.birthDate) | date: 'MMMM YYYY'}}</td>
+        <td>{{e.address}}</td>
+        <td>{{e.city}}</td>
+        <td>{{e.country}}</td>
+        <td>{{e.homePhone}}</td>
+        <td><a routerLink="/employees/details/{{e.id}}"><img [src]="employeeImagesUrl + e.imageName"></a></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- {gifts.map(g => <tr key={g.giftId}>
+    <td>{g.targetName}</td>
+    <td>{g.giftName}</td>
+    <td>{g.description}</td>
+    <td>{g.price}</td>
+    <td>{g.discount}</td>
+</tr>
+)} -->

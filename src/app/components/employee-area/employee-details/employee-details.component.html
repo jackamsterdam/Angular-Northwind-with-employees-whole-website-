@@ -1,0 +1,18 @@
+<div class="box" *ngIf="employee">
+    <h3>שם תואר: {{employee.titleOfCourtesy}}</h3>
+  <h3> שם: {{employee.firstName}}</h3>
+  <h3>שם משפחה: {{employee.lastName}}</h3>
+  <h3>תפקיד:{{employee.title}}</h3>
+  <h3>תאריך לידה: {{formatDate(employee.birthDate) | date: 'MMMM y'}}</h3>
+  <h3>כתובת:{{employee.address}}</h3>
+  <h3>עיר:{{employee.city}}</h3>
+  <h3>מדינה: {{employee.country}}</h3>
+  <h3>טלפון: {{employee.homePhone}}</h3>
+
+  <img [src]="employeeImagesUrl + employee.imageName" />
+  <br>
+
+  <a routerLink="/employees">חזרה לעובדים</a>
+
+  
+</div>

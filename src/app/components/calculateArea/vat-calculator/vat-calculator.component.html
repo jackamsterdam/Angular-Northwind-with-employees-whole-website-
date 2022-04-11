@@ -1,0 +1,12 @@
+<div class="box">
+    <h2>מחשבון מע"מ</h2>
+  <!-- <input type="number" #priceInput (change)="calculateVat(#priceInput.value)" [(ngModel)]="price"> -->
+  <input type="number" #priceInput (change)="calculateVat(priceInput.value)" >
+  <br>
+  <br>
+  <span>מחיר :{{priceWithoutVat}}</span>
+  <br>
+  <br>
+  <span>מע"מ: {{vat}}</span>
+
+</div>

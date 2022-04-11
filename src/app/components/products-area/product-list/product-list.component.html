@@ -2,4 +2,7 @@
 
 
 <a routerLink="/products/new">➕</a>
+
 <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+
+<!-- {movies.map(m => <MovieCard key={m.movieId} movie={m} deleteMovie={deleteMovie} />)} -->
