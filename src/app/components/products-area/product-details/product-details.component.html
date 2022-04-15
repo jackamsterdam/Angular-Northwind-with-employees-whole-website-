@@ -7,4 +7,12 @@
     <br>
   
     <a routerLink="/products">חזרה לתפריט מוצרים</a>
+
+     <span> | </span>
+
+     <a routerLink="/products/edit/{{product.id}}">ערוך</a>
+     <span> | </span>
+
+   <a href="javascript:void(0)" (click)="deleteProduct()">מחק</a>
+
 </div>

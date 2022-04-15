@@ -13,6 +13,10 @@
   <br>
 
   <a routerLink="/employees">חזרה לעובדים</a>
+  <span> | </span>
+  <a routerLink="/employees/edit/{{employee.id}}">ערוך עובד</a>
+  <span> | </span>
+  <a href="javascript:void(0)" (click)="deleteEmployee()">מחק עובד</a>
 
   
 </div>

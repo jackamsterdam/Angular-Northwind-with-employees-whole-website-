@@ -1,21 +1,29 @@
 <div class="box">
-    <form (ngSubmit)="add()">
+    <form (ngSubmit)="add()" #formInfo="ngForm">
 
         <h2>הוספת מוצר</h2>
 
         <label>שם:</label>
-        <input type="text" name="name" [(ngModel)]="product.name">
+        <input type="text" name="name" [(ngModel)]="product.name" #nameBox="ngModel" required minlength="3">
+        <span *ngIf="nameBox.touched && nameBox.errors?.['required']">חסר שם</span>
+        <span *ngIf="nameBox.touched && nameBox.errors?.['minlength']">שם חייב להיות מינימום שלוש תווים</span>
         
         <label>מחיר:</label>
-        <input type="number" step="0.01" name="price" [(ngModel)]="product.price">
+        <input type="number" step="0.01" name="price" [(ngModel)]="product.price" #priceBox="ngModel" required min="0" max="1000">
+        <span *ngIf="priceBox.touched && priceBox.errors?.['required']">חסר מחיר</span>
+        <span *ngIf="priceBox.touched && priceBox.errors?.['min']">מחיר לא יכול להיות שלילי</span>
+        <span *ngIf="priceBox.touched && priceBox.errors?.['max']">מחיר לא יכול לעבור 1000</span>
 
         <label>כמות:</label>
-        <input type="number" name="stock" [(ngModel)]="product.stock">
+        <input type="number" name="stock" [(ngModel)]="product.stock" #stockBox="ngModel" required min="0" max="10000">
+        <span *ngIf="stockBox.touched && stockBox.errors?.['required']"> חסר כמות</span>
+        <span *ngIf="stockBox.touched && stockBox.errors?.['min']">כמות לא יכול להיות שלילי</span>
+        <span *ngIf="stockBox.touched && stockBox.errors?.['max']">כמות לא יכול לעבור 10000</span>
 
         <label>תמונה:</label>
-        <input type="file" name="image" [(ngModel)]="product.image">
+        <input type="file" name="image" #imageBox>
 
 
-        <button>הוסף</button>
+        <button [disabled]="formInfo.invalid">הוסף</button>
     </form>
 </div>

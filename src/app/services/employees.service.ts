@@ -22,7 +22,40 @@ export class EmployeesService {
   }
 
   async addEmployee(employee: EmployeeModel):Promise<EmployeeModel> {
-    const addedEmployee = firstValueFrom(this.http.post<EmployeeModel>(environment.employeesUrl, employee))
+    // Convert EmployeeModel into FormData: ( for files/images)
+    const formData = new FormData()
+    formData.append('firstName', employee.firstName)
+    formData.append('lastName', employee.lastName)
+    formData.append('title', employee.title)
+    formData.append('titleOfCourtesy', employee.titleOfCourtesy)
+    formData.append('birthDate', employee.birthDate)
+    formData.append('address', employee.address)
+    formData.append('city', employee.city)
+    formData.append('country', employee.country)
+    formData.append('homePhone', employee.homePhone.toString())
+    formData.append('image', employee.image)
+    const addedEmployee = firstValueFrom(this.http.post<EmployeeModel>(environment.employeesUrl, formData))
     return addedEmployee
+  }
+
+  async updateEmployee(employee: EmployeeModel):Promise<EmployeeModel> {
+    const formData = new FormData()
+    formData.append('id', employee.id.toString())
+    formData.append('firstName', employee.firstName)
+    formData.append('lastName', employee.lastName)
+    formData.append('title', employee.title)
+    formData.append('titleOfCourtesy', employee.titleOfCourtesy)
+    formData.append('birthDate', employee.birthDate)
+    formData.append('address', employee.address)
+    formData.append('city', employee.city)
+    formData.append('country', employee.country)
+    formData.append('homePhone', employee.homePhone.toString())
+    formData.append('image', employee.image)
+    const updatedEmployee = firstValueFrom(this.http.put<EmployeeModel>(environment.employeesUrl + employee.id, formData))
+    return updatedEmployee
+  }
+
+  async deleteEmployee(id: number):Promise<void> {
+    await firstValueFrom(this.http.delete(environment.employeesUrl + id))
   }
 }

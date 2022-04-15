@@ -11,6 +11,8 @@ import { VatCalculatorComponent } from './components/calculateArea/vat-calculato
 import { EmployeeListComponent } from './components/employee-area/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './components/employee-area/add-employee/add-employee.component';
 import { EmployeeDetailsComponent } from './components/employee-area/employee-details/employee-details.component';
+import { UpdateProductComponent } from './components/products-area/update-product/update-product.component';
+import { UpdateEmployeeComponent } from './components/employee-area/update-employee/update-employee.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -18,9 +20,12 @@ const routes: Routes = [
   {path:'products/new', component: AddProductComponent},
   {path:'products/details/:id', component: ProductDetailsComponent},
 
+  {path: 'products/edit/:id', component: UpdateProductComponent},
+
   {path: 'employees', component: EmployeeListComponent },
   {path: 'employees/new', component: AddEmployeeComponent},
   {path: 'employees/details/:id', component: EmployeeDetailsComponent},
+  {path: 'employees/edit/:id', component: UpdateEmployeeComponent},
 
  {path:'calculate', component: VatCalculatorComponent},
 

@@ -4,7 +4,7 @@ class ProductModel {
   price: number
   stock: number 
   imageName: string 
-  image: File 
+  image: File //but in react its in FileList but in Angular we get teh direct File 
 }
 
 export default ProductModel

@@ -24,6 +24,11 @@ button {
     margin: 10px 0 20px 0;
 }
 
+button:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+}
+
 .ng-touched.ng-invalid:not(form) {
     border: 2px solid red;
     background-color: pink;

@@ -23,8 +23,36 @@ export class ProductsService {
   }
 
   async addProduct(product: ProductModel):Promise<ProductModel>{
-    const addedProduct = firstValueFrom(this.http.post<ProductModel>(environment.productsUrl, product))
+
+   const formData = new FormData() 
+   formData.append('name', product.name)
+   formData.append('price', product.price.toString())
+   formData.append('stock', product.stock.toString())
+   formData.append('image', product.image)
+
+
+
+
+    const addedProduct = firstValueFrom(this.http.post<ProductModel>(environment.productsUrl, formData))
     return addedProduct
 
+  }
+
+  async updateProduct(product: ProductModel):Promise<ProductModel> {
+     const formData = new FormData()
+     formData.append('id', product.id.toString())
+     formData.append('name', product.name)
+     formData.append('price', product.price.toString())
+     formData.append('stock', product.stock.toString())
+     formData.append('image', product.image)
+
+
+    const updatedProduct = await firstValueFrom(this.http.put<ProductModel>(environment.productsUrl + product.id, formData))
+    return updatedProduct
+  }
+
+
+  async deleteProduct(id: number):Promise<void> {
+    await firstValueFrom(this.http.delete(environment.productsUrl + id))
   }
 }

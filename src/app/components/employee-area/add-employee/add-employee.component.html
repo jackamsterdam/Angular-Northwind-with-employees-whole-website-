@@ -1,4 +1,68 @@
 <div class="box">
+  <form (ngSubmit)="add()" [formGroup]="employeeForm">
+    <h2>הוספת עובד</h2>
+<!-- dont put this. use it ישירות  -->
+    <label>קידומת לשם:</label>
+    <select name="titleOfCourtesy" [formControl]="titleOfCourtesyInput" required>
+        <option value="Ms.">Ms.</option>
+        <option value="Dr.">Dr.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Mr.">Mr.</option>
+    </select>
+    <span *ngIf="titleOfCourtesyInput.touched
+    
+    
+    && titleOfCourtesyInput.errors?.['required']"> קידומת חסר שם</span>
+
+    <label>שם:</label>
+    <input type="text" name="firstName" [formControl]="firstNameInput" required minlength="3"/>
+    <span *ngIf="firstNameInput.touched && firstNameInput.errors?.['required']">חסר שם</span>
+    <span *ngIf="firstNameInput.touched && firstNameInput.errors?.['minlength']">האורך של השם חייב להיות מינימום 3 תווים </span>
+
+    <label>שם משפחה:</label>
+    <input type="text" name="lastName" [formControl]="lastNameInput" required minlength="3">
+    <span *ngIf="lastNameInput.touched && lastNameInput.errors?.['required']">חסר שם</span>
+    <span *ngIf="lastNameInput.touched && lastNameInput.errors?.['minlength']">האורך של השם חייב להיות מינימום 3 תווים </span>
+
+    <label>תפקיד:</label>
+    <input type="text" name="title"  [formControl]="titleInput" required minlength="3"/>
+    <span *ngIf="titleInput.touched && titleInput.errors?.['required']">חסר שם</span>
+    <span *ngIf="titleInput.touched && titleInput.errors?.['minlength']">האורך של התפקיד  חייב להיות מינימום 3 תווים </span>
+
+    <label>תאריך לידה:</label>
+    <!--! date validation??  -->
+    <input type="date" name="birthDate" [formControl]="birthDateInput" required/>
+    <span *ngIf="birthDateInput.touched && birthDateInput.errors?.['required']">חסר תאריך</span>
+
+    <label>כתובת:</label>
+    <input type="text" name="address" [formControl]="addressInput" required minlength="3"/>
+    <span *ngIf="addressInput.touched && addressInput.errors?.['required']">חסר כתובת</span>
+    <span *ngIf="addressInput.touched && addressInput.errors?.['minlength']">האורך של הכתובת  חייב להיות מינימום 10 תווים </span>
+
+    <label>עיר:</label>
+    <input type="text" name="city" [formControl]="cityInput" required minlength="3"/>
+    <span *ngIf="cityInput.touched && cityInput.errors?.['required']">חסר עיר</span>
+    <span *ngIf="cityInput.touched && cityInput.errors?.['minlength']">האורך של העיר  חייב להיות מינימום 10 תווים </span>
+
+    <label>מדינה:</label>
+    <input type="text" name="country" [formControl]="countryInput" required minlength="3"/>
+    <span *ngIf="countryInput.touched && countryInput.errors?.['required']">חסר מדינה</span>
+    <span *ngIf="countryInput.touched && countryInput.errors?.['minlength']">האורך של המדינה  חייב להיות מינימום 10 תווים </span>
+<!--! phone validation???  -->
+    <label>מספר טלפון:</label>
+    <input type="tel" name="homePhone" [formControl]="homePhoneInput" required/>
+    <span *ngIf="homePhoneInput.touched && homePhoneInput.errors?.['required']">חסר טלפון</span>
+
+<!--! dont forget [formControl]="imageInput" -->
+    <label>תמונה :</label>
+    <input type="file" name="image" [formControl]="imageInput" #imageBox/>
+
+    <button [disabled]="employeeForm.invalid">הוסף</button>
+  </form>
+</div>
+
+
+<!-- <div class="box">
   <form (ngSubmit)="submit()">
     <h2>הוספת עובד</h2>
 
@@ -39,4 +103,4 @@
 
     <button>הוסף</button>
   </form>
-</div>
+</div> -->

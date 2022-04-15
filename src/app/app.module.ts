@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/layout-area/header/header.componen
 import { FooterComponent } from './components/layout-area/footer/footer.component';
 import { MenuComponent } from './components/layout-area/menu/menu.component';
 import { HomeComponent } from './components/home-area/home/home.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DiscountComponent } from './components/home-area/discount/discount.component';
 import { SaleComponent } from './components/home-area/sale/sale.component';
 import { ShoesComponent } from './components/home-area/shoes/shoes.component';
@@ -27,6 +27,8 @@ import { VatCalculatorComponent } from './components/calculateArea/vat-calculato
 import { EmployeeListComponent } from './components/employee-area/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './components/employee-area/add-employee/add-employee.component';
 import { EmployeeDetailsComponent } from './components/employee-area/employee-details/employee-details.component';
+import { UpdateProductComponent } from './components/products-area/update-product/update-product.component';
+import { UpdateEmployeeComponent } from './components/employee-area/update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -52,12 +54,15 @@ import { EmployeeDetailsComponent } from './components/employee-area/employee-de
     VatCalculatorComponent,
     EmployeeListComponent,
     AddEmployeeComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    UpdateProductComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

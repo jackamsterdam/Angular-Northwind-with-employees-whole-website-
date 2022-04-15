@@ -1,0 +1,62 @@
+<div class="box" *ngIf="employee">
+    <!-- pay attention its ngForm and others are ngModel  -->
+    <form (ngSubmit)="update()" #formInfo="ngForm">
+        <h2>עריכת עובד</h2>
+
+        <label> קידומת לשם</label>
+        <select name="titleOfCourtesy" [(ngModel)]="employee.titleOfCourtesy" #titleOfCourtesyBox="ngModel" required>
+            <option value="Ms.">Ms.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Dr.">Dr.</option>
+            <option value="Mr.">Mr.</option>
+        </select>
+        <span *ngIf="titleOfCourtesyBox.touched && titleOfCourtesyBox.errors?.['required']">קידומת לשם חסר</span>
+
+        <label>שם פרטי</label>
+        <input type="text" name="firstName" [(ngModel)]="employee.firstName" #firstNameBox="ngModel" required minlength="3">
+        <span *ngIf="firstNameBox.touched && firstNameBox.errors?.['required']">חסר שם</span>
+        <span *ngIf="firstNameBox.touched && firstNameBox.errors?.['minlength']"> שם חייב להיות מינימום 3 תווים</span>
+
+        <label>שם משפחה:</label>
+        <input type="text" name="lastName" [(ngModel)]="employee.lastName" #lastNameBox="ngModel" required minlength="3">
+        <span *ngIf="lastNameBox.touched && lastNameBox.errors?.['required']">חסר שם</span>
+        <span *ngIf="lastNameBox.touched && lastNameBox.errors?.['minlength']"> שם חייב להיות מינימום 3 תווים</span>
+
+        <label>תואר</label>
+        <input type="text" name="title" [(ngModel)]="employee.title" #titleBox="ngModel" required minlength="3">
+        <span *ngIf="titleBox.touched && titleBox.errors?.['required']">חסר תואר</span>
+        <span *ngIf="titleBox.touched && titleBox.errors?.['minlength']"> תואר  חייב להיות מינימום 3 תווים</span>
+
+        <label>תאריך לידה</label>
+        <input type="date" name="birthDate" [(ngModel)]="employee.birthDate" #birthDateBox="ngModel" required>
+        <span *ngIf="birthDateBox.touched && birthDateBox.errors?.['required']">חסר תאריך</span>
+
+        <label>כתובת:</label>
+        <input type="text" name="address" [(ngModel)]="employee.address" #addressBox="ngModel" required minlength="10">
+        <span *ngIf="addressBox.touched && addressBox.errors?.['required']">חסר כתובת</span>
+        <span *ngIf="addressBox.touched && addressBox.errors?.['minlength']"> כתובת  חייב להיות מינימום 10 תווים</span>
+
+        <label>עיר</label>
+        <input type="text" name="city" [(ngModel)]="employee.city" #cityBox="ngModel" required minlength="3">
+        <span *ngIf="cityBox.touched && cityBox.errors?.['required']">חסר עיר</span>
+        <span *ngIf="cityBox.touched && cityBox.errors?.['minlength']"> עיר  חייב להיות מינימום 3 תווים</span>
+
+        <label>מדינה</label>
+        <input type="text" name="country" [(ngModel)]="employee.country" #countryBox="ngModel" required minlength="3">
+        <span *ngIf="countryBox.touched && countryBox.errors?.['required']">חסר מדינה</span>
+        <span *ngIf="countryBox.touched && countryBox.errors?.['minlength']"> מדינה  חייב להיות מינימום 3 תווים</span>
+
+        <label>טלפון</label>
+        <input type="tel" name="homePhone" [(ngModel)]="employee.homePhone" #homePhoneBox="ngModel" required>
+        <span *ngIf="homePhoneBox.touched && homePhoneBox.errors?.['required']">חסר טלפון</span>
+
+        <label>תמונה:</label>
+        <input type="file" name="image" #imageBox>
+
+
+        <button [disabled]="formInfo.invalid">עדכון</button>
+    </form>
+
+
+
+</div>
