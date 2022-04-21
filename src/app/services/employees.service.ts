@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import EmployeeModel from '../models/employee.model';
 import { environment } from 'src/environments/environment';
+import store from '../Redux/store';
+import { addEmployeeAction, deleteEmployeeAction, fetchEmployeesAction, udpateEmployeeAction } from '../Redux/employees-state';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +14,20 @@ export class EmployeesService {
   constructor(private http: HttpClient) { }
 
   async getAllEmployees():Promise<EmployeeModel[]>{
-    const employees = firstValueFrom(this.http.get<EmployeeModel[]>(environment.employeesUrl))
-    return employees 
+    if (store.getState().employeesState.employees.length === 0) {
+      const employees = await firstValueFrom(this.http.get<EmployeeModel[]>(environment.employeesUrl))
+      store.dispatch(fetchEmployeesAction(employees))
+
+    }
+    return store.getState().employeesState.employees
   }
 
   async getOneEmployee(id: number) :Promise<EmployeeModel>{
-    const employee = firstValueFrom(this.http.get<EmployeeModel>(environment.employeesUrl + id))
+    let employee = store.getState().employeesState.employees.find(e => e.id === id)
+    if (!employee) {
+
+       employee = await firstValueFrom(this.http.get<EmployeeModel>(environment.employeesUrl + id))
+    }
     return employee 
   }
 
@@ -34,7 +44,8 @@ export class EmployeesService {
     formData.append('country', employee.country)
     formData.append('homePhone', employee.homePhone.toString())
     formData.append('image', employee.image)
-    const addedEmployee = firstValueFrom(this.http.post<EmployeeModel>(environment.employeesUrl, formData))
+    const addedEmployee = await firstValueFrom(this.http.post<EmployeeModel>(environment.employeesUrl, formData))
+    store.dispatch(addEmployeeAction(addedEmployee))
     return addedEmployee
   }
 
@@ -51,11 +62,13 @@ export class EmployeesService {
     formData.append('country', employee.country)
     formData.append('homePhone', employee.homePhone.toString())
     formData.append('image', employee.image)
-    const updatedEmployee = firstValueFrom(this.http.put<EmployeeModel>(environment.employeesUrl + employee.id, formData))
+    const updatedEmployee = await firstValueFrom(this.http.put<EmployeeModel>(environment.employeesUrl + employee.id, formData))
+    store.dispatch(udpateEmployeeAction(updatedEmployee))
     return updatedEmployee
   }
 
   async deleteEmployee(id: number):Promise<void> {
     await firstValueFrom(this.http.delete(environment.employeesUrl + id))
+    store.dispatch(deleteEmployeeAction(id))
   }
 }

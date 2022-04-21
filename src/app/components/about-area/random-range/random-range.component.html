@@ -1,0 +1,20 @@
+<div class="box">
+    <span *ngFor="let n of arr">{{n}} | </span>
+    <button (click)="stop()">Stop</button>
+    <button (click)="start()">Start</button>
+    <br>
+    <span *ngFor="let n of arr2">{{n}} | </span>
+    &nbsp;
+    <input type="checkbox" (change)="showEven($event)" value="Show only even numbers">
+    <label>Show evens</label>
+
+    <br>
+    <span *ngFor="let n of arr3">{{n}} | </span>
+    &nbsp;
+    <input type="checkbox" value="Show powers"  (change)="showPowers($event)">
+    <label>Show powers</label>
+    <br>
+    <input type="checkbox" (change)="test($event.target)">
+    <label>test</label>
+
+</div>

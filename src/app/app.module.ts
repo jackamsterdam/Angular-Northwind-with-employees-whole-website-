@@ -29,6 +29,7 @@ import { AddEmployeeComponent } from './components/employee-area/add-employee/ad
 import { EmployeeDetailsComponent } from './components/employee-area/employee-details/employee-details.component';
 import { UpdateProductComponent } from './components/products-area/update-product/update-product.component';
 import { UpdateEmployeeComponent } from './components/employee-area/update-employee/update-employee.component';
+import { RandomRangeComponent } from './components/about-area/random-range/random-range.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { UpdateEmployeeComponent } from './components/employee-area/update-emplo
     EmployeeDetailsComponent,
     UpdateProductComponent,
     UpdateEmployeeComponent,
+    RandomRangeComponent
   ],
   imports: [
     BrowserModule,
