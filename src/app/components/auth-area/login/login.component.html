@@ -1,0 +1,27 @@
+
+<!-- Reactive forms:  -->
+<!-- <div class="box" *ngIf="credentials"> -->
+<div class="box">
+    <h2>התחבר</h2>
+    <form (ngSubmit)="submit()" [formGroup]="authForm">
+
+       <label>יוזר: </label>
+       <input type="text"  required minlength="3" [formControl]="usernameInput">
+       <span *ngIf="usernameInput.touched && usernameInput.errors?.['required']">חסר יוזר</span>
+       <span *ngIf="usernameInput.touched && usernameInput.errors?.['minlength']">חסר אורך</span>
+       
+
+       <label>ססמא: </label>
+       <input type="password" required minlength="3" [formControl]="passwordInput">
+       <span *ngIf="passwordInput.touched && passwordInput.errors?.['required']">חסר ססמא</span>
+       <span *ngIf="passwordInput.touched && passwordInput.errors?.['required']">חסר אורך</span>
+     
+
+  
+
+
+
+
+        <button [disabled]="authForm.invalid">התחבר</button>
+    </form>
+</div>

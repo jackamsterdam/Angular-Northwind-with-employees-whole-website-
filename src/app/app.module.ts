@@ -22,7 +22,7 @@ import { ProductDetailsComponent } from './components/products-area/product-deta
 import { AddProductComponent } from './components/products-area/add-product/add-product.component';
 import { AboutComponent } from './components/about-area/about/about.component';
 import { SuccessStoryComponent } from './components/success-stories-area/success-story/success-story.component'
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { VatCalculatorComponent } from './components/calculateArea/vat-calculator/vat-calculator.component';
 import { EmployeeListComponent } from './components/employee-area/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './components/employee-area/add-employee/add-employee.component';
@@ -30,6 +30,13 @@ import { EmployeeDetailsComponent } from './components/employee-area/employee-de
 import { UpdateProductComponent } from './components/products-area/update-product/update-product.component';
 import { UpdateEmployeeComponent } from './components/employee-area/update-employee/update-employee.component';
 import { RandomRangeComponent } from './components/about-area/random-range/random-range.component';
+import { AuthMenuComponent } from './components/auth-area/auth-menu/auth-menu.component';
+import { RegisterComponent } from './components/auth-area/register/register.component';
+import { LoginComponent } from './components/auth-area/login/login.component';
+import { LogoutComponent } from './components/auth-area/logout/logout.component';
+import { JwtInterceptor } from './services/jwt.interceptor';
+import { RegisterTemplateFormComponent } from './components/auth-area/register-template-form/register-template-form.component';
+import { LoginTemplateFormComponent } from './components/auth-area/login-template-form/login-template-form.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +65,13 @@ import { RandomRangeComponent } from './components/about-area/random-range/rando
     EmployeeDetailsComponent,
     UpdateProductComponent,
     UpdateEmployeeComponent,
-    RandomRangeComponent
+    RandomRangeComponent,
+    AuthMenuComponent,
+    RegisterComponent,
+    LoginComponent,
+    LogoutComponent,
+    RegisterTemplateFormComponent,
+    LoginTemplateFormComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +80,11 @@ import { RandomRangeComponent } from './components/about-area/random-range/rando
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    useClass: JwtInterceptor,
+    provide : HTTP_INTERCEPTORS,
+    multi: true
+  }],
   bootstrap: [LayoutComponent]
 })
 export class AppModule { }

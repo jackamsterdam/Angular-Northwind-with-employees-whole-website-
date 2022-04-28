@@ -1,0 +1,31 @@
+<!-- Reactive form  -->
+<div class="box">
+    <h2>הרשם</h2>
+    <form (ngSubmit)="submit()" [formGroup]="authForm">
+
+        <label>שפ פרטי: </label>
+        <input type="text" name="firstName" required minlength="3" [formControl]="firstNameInput">
+        <span *ngIf="firstNameInput.touched && firstNameInput.errors?.['required']">חסר שם</span>
+        <span *ngIf="firstNameInput.touched && firstNameInput.errors?.['minlength']">חסר אורך</span>
+     
+
+        <label>שם משפחה: </label>
+        <input type="text" name="lastName" required minlength="3" [formControl]="lastNameInput">
+        <span *ngIf="lastNameInput.touched && lastNameInput.errors?.['required']">חסר שם </span>
+        <span *ngIf="lastNameInput.touched && lastNameInput.errors?.['minlength']">חסר אורך</span>
+    
+
+        <label>יוזר: </label>
+        <input type="text" name="username" required minlength="3" [formControl]="usernameInput">
+        <span *ngIf="usernameInput.touched && usernameInput.errors?.['required']">חסר יוזר </span>
+        <span *ngIf="usernameInput.touched && usernameInput.errors?.['minlength']">חסר אורך</span>
+       
+
+        <label>ססמא: </label>
+        <input type="password" name="password" required minlength="3" [formControl]="passwordInput">
+        <span *ngIf="passwordInput.touched && passwordInput.errors?.['required']">חסר ססמא </span>
+        <span *ngIf="passwordInput.touched && passwordInput.errors?.['minlength']">חסר אורך</span>
+  
+        <button [disabled]="authForm.invalid">הרשם</button>
+    </form>
+</div>

@@ -4,5 +4,8 @@ export const environment = {
   productImagesUrl: 'http://localhost:3030/api/products/images/',
 
   employeesUrl: 'http://localhost:3030/api/employees/',
-  employeeImagesUrl: 'http://localhost:3030/api/employees/images/'
+  employeeImagesUrl: 'http://localhost:3030/api/employees/images/',
+
+  registerUrl: 'http://localhost:3030/api/auth/register',
+  loginUrl: 'http://localhost:3030/api/auth/login'
 };

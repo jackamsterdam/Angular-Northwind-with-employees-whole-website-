@@ -1,0 +1,31 @@
+<div>
+<!-- 
+Hello Guest | Login | Register 
+Hello Jack Amsterdam | Logout  -->
+<ng-container *ngIf="!user">
+    <span>שלום אורח</span>
+    <span> | </span>
+    <a routerLink="/login">לוגין</a>
+    <span> | </span>
+    <a routerLink="/register">הרשם</a>
+
+</ng-container>
+
+<ng-container *ngIf="user">
+    <span>Hello {{user.firstName | titlecase}} {{user.lastName | titlecase}}</span>
+    <span> | </span>
+    <a routerLink="/logout">התנתק</a>
+</ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

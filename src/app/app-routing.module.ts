@@ -13,8 +13,18 @@ import { AddEmployeeComponent } from './components/employee-area/add-employee/ad
 import { EmployeeDetailsComponent } from './components/employee-area/employee-details/employee-details.component';
 import { UpdateProductComponent } from './components/products-area/update-product/update-product.component';
 import { UpdateEmployeeComponent } from './components/employee-area/update-employee/update-employee.component';
+import { RegisterComponent } from './components/auth-area/register/register.component';
+import { LoginComponent } from './components/auth-area/login/login.component';
+import { LogoutComponent } from './components/auth-area/logout/logout.component';
 
 const routes: Routes = [
+
+{path: 'register', component: RegisterComponent},
+{path: 'login', component: LoginComponent},
+{path: 'logout', component: LogoutComponent},
+
+
+
   {path: 'home', component: HomeComponent},
   {path:'products', component: ProductListComponent},
   {path:'products/new', component: AddProductComponent},

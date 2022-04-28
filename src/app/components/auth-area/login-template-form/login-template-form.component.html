@@ -1,0 +1,22 @@
+<!-- Template forms:  -->
+<div class="box">
+    <h2>התחבר</h2>
+    <form (ngSubmit)="submit()"  #formInfo="ngForm">
+       <label>יוזר: </label>
+       <input type="text" name="username" [(ngModel)]="credentials.username" #usernameBox="ngModel" required minlength="3">
+       <span *ngIf="usernameBox.touched && usernameBox.errors?.['required']">חסר יוזר</span>
+       <span *ngIf="usernameBox.touched && usernameBox.errors?.['minlength']">אורך חייב להיות מינימום 3 תווים</span>
+
+       <label>ססמא: </label>
+       <input type="password" name="password" [(ngModel)]="credentials.password" #passwordBox="ngModel" required minlength="3">
+       <span *ngIf="passwordBox.touched && passwordBox.errors?.['required']">חסר ססמא</span>
+       <span *ngIf="passwordBox.touched && passwordBox.errors?.['minlength']">חסר אורך</span>
+
+
+
+
+
+
+        <button [disabled]="formInfo.invalid" >התחבר</button>
+    </form>
+</div>

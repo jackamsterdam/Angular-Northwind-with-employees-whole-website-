@@ -7,4 +7,4 @@ class ProductModel {
   image: File //but in react its in FileList but in Angular we get teh direct File 
 }
 
-export default ProductModel
+export default ProductModel  //in angular use named exports instead in react export default 

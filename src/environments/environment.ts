@@ -6,6 +6,8 @@ export const environment = {
   production: false,
   productsUrl: 'http://localhost:3030/api/products/',
   productImagesUrl: 'http://localhost:3030/api/products/images/',
+  registerUrl: 'http://localhost:3030/api/auth/register',
+  loginUrl: 'http://localhost:3030/api/auth/login',
   
   employeesUrl: 'http://localhost:3030/api/employees/',
   employeeImagesUrl: 'http://localhost:3030/api/employees/images/'
