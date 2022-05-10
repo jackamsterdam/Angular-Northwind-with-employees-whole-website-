@@ -16,6 +16,8 @@ import { UpdateEmployeeComponent } from './components/employee-area/update-emplo
 import { RegisterComponent } from './components/auth-area/register/register.component';
 import { LoginComponent } from './components/auth-area/login/login.component';
 import { LogoutComponent } from './components/auth-area/logout/logout.component';
+import { AuthGuard } from './services/auth.guard';
+import { AdminGuard } from './services/admin.guard';
 
 const routes: Routes = [
 
@@ -27,13 +29,13 @@ const routes: Routes = [
 
   {path: 'home', component: HomeComponent},
   {path:'products', component: ProductListComponent},
-  {path:'products/new', component: AddProductComponent},
+  {path:'products/new', component: AddProductComponent, canActivate: [AuthGuard, AdminGuard]},
   {path:'products/details/:id', component: ProductDetailsComponent},
 
   {path: 'products/edit/:id', component: UpdateProductComponent},
 
   {path: 'employees', component: EmployeeListComponent },
-  {path: 'employees/new', component: AddEmployeeComponent},
+  {path: 'employees/new', component: AddEmployeeComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'employees/details/:id', component: EmployeeDetailsComponent},
   {path: 'employees/edit/:id', component: UpdateEmployeeComponent},
 

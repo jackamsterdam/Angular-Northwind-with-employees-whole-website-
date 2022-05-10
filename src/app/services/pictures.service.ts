@@ -26,6 +26,8 @@ time: string
     // return '../../../../assets/images/tea.jpg'
     return 'assets/images/tea.jpg'
   }
+
+  // Correct regisna: 
   if ((hour > 20 && hour < 23) || (hour >= 0 && hour <= 8) ){
     // return '../../../../assets/images/water.jpg'
     return 'assets/images/water.jpg'
